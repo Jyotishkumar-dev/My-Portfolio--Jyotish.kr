@@ -1,122 +1,108 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
+import gsap from 'gsap';
+import { ThreeCanvas } from './components/ThreeCanvas';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
+import { Skills } from './components/Skills';
+import { HackathonsLeadership } from './components/HackathonsLeadership';
+import { AchievementsEducation } from './components/AchievementsEducation';
+import { ContactSupabase } from './components/ContactSupabase';
+import { Footer } from './components/Footer';
+import { ResumeModal } from './components/ResumeModal';
+import { DevTerminal } from './components/DevTerminal';
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
+  // Initialize Locomotive Scroll v5
+  useEffect(() => {
+    let scrollInstance: unknown;
+    try {
+      scrollInstance = new LocomotiveScroll();
+    } catch (err) {
+      console.warn('Locomotive Scroll init notice:', err);
+    }
+
+    // GSAP entrance reveal
+    gsap.fromTo(
+      '#main-content',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
+    );
+
+    return () => {
+      if (scrollInstance && typeof (scrollInstance as { destroy?: () => void }).destroy === 'function') {
+        (scrollInstance as { destroy: () => void }).destroy();
+      }
+    };
+  }, []);
+
+  // Global Keyboard Shortcuts ('~' or '`' to toggle Terminal)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '`' || e.key === '~') {
+        e.preventDefault();
+        setIsTerminalOpen((prev) => !prev);
+      }
+      if (e.key === 'Escape') {
+        setIsTerminalOpen(false);
+        setIsResumeModalOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="relative min-h-screen text-slate-100 bg-[#07070b] overflow-x-hidden selection:bg-cyan-500/20 selection:text-cyan-300">
+      {/* Three.js 3D Interactive Canvas */}
+      <ThreeCanvas />
 
-      <div className="ticks"></div>
+      {/* Cyber Grid Background Overlays */}
+      <div className="fixed inset-0 cyber-grid opacity-30 pointer-events-none z-0" />
+      <div className="fixed inset-0 bg-radial from-transparent via-[#07070b]/60 to-[#07070b] pointer-events-none z-0" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Main Content Wrap */}
+      <div id="main-content" className="relative z-10 flex flex-col">
+        {/* Navigation */}
+        <Navbar
+          onOpenTerminal={() => setIsTerminalOpen(true)}
+          onOpenResume={() => setIsResumeModalOpen(true)}
+        />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* Main Sections */}
+        <main className="flex-1">
+          <Hero
+            onOpenResume={() => setIsResumeModalOpen(true)}
+            onOpenTerminal={() => setIsTerminalOpen(true)}
+          />
+          <Projects />
+          <Skills />
+          <HackathonsLeadership />
+          <AchievementsEducation />
+          <ContactSupabase />
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+
+      {/* Interactive Modals */}
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+      />
+
+      <DevTerminal
+        isOpen={isTerminalOpen}
+        onClose={() => setIsTerminalOpen(false)}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

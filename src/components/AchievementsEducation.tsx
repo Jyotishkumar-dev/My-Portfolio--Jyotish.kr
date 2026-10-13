@@ -1,7 +1,7 @@
 import React from 'react';
-import { GraduationCap, Award, CheckCircle, BookOpen, Flame, Cpu, Terminal, ExternalLink } from 'lucide-react';
+import { GraduationCap, Award, CheckCircle, BookOpen, Flame, Cpu, Terminal } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { playSuccessSound, playPopSound } from '../utils/audio';
+import { playSuccessSound } from '../utils/audio';
 
 export const AchievementsEducation: React.FC = () => {
   const triggerLeetCodeCelebration = () => {
