@@ -6,17 +6,13 @@ import {
   Send,
   CheckCircle2,
   Database,
-  Key,
   Clock,
   Sparkles,
-  Linkedin,
-  Github,
   Copy,
   Check,
   ShieldCheck,
   Settings,
   X,
-  ExternalLink,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import {
@@ -26,9 +22,10 @@ import {
   clearCustomSupabaseCredentials,
   SUPABASE_SQL_SCHEMA,
   getStoredMessages,
-  ContactMessage,
 } from '../lib/supabase';
+import type { ContactMessage } from '../lib/supabase';
 import { playSuccessSound, playPopSound } from '../utils/audio';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const ContactSupabase: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -261,7 +258,7 @@ export const ContactSupabase: React.FC = () => {
                   onClick={() => playPopSound()}
                   className="flex items-center gap-2 p-3 rounded-xl glass-panel border border-white/10 hover:border-blue-500/50 text-slate-300 hover:text-white transition group"
                 >
-                  <Linkedin className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
+                  <LinkedinIcon className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-medium truncate">LinkedIn</span>
                 </a>
                 <a
@@ -271,7 +268,7 @@ export const ContactSupabase: React.FC = () => {
                   onClick={() => playPopSound()}
                   className="flex items-center gap-2 p-3 rounded-xl glass-panel border border-white/10 hover:border-purple-500/50 text-slate-300 hover:text-white transition group"
                 >
-                  <Github className="w-4 h-4 text-purple-400 group-hover:scale-110 transition-transform" />
+                  <GithubIcon className="w-4 h-4 text-purple-400 group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-medium truncate">GitHub</span>
                 </a>
               </div>

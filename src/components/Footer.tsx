@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowUp, Heart, Sparkles, MapPin, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, MapPin, Mail } from 'lucide-react';
 import { playPopSound } from '../utils/audio';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -44,20 +45,23 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition"
+              title="GitHub"
             >
-              <Github className="w-4 h-4" />
+              <GithubIcon className="w-4 h-4" />
             </a>
             <a
               href="https://linkedin.com/in/jyotish-kr-verma-0601bb387"
               target="_blank"
               rel="noreferrer"
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition"
+              title="LinkedIn"
             >
-              <Linkedin className="w-4 h-4" />
+              <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
               href="mailto:jyotishkumarjhar@gmail.com"
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition"
+              title="Email"
             >
               <Mail className="w-4 h-4" />
             </a>

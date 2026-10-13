@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Layers, Sparkles, CheckCircle2, ChevronRight, X, Cpu, Database, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Layers, Sparkles, CheckCircle2, ChevronRight, X, Cpu, Database, ShieldCheck } from 'lucide-react';
 import { playPopSound } from '../utils/audio';
+import { GithubIcon } from './Icons';
 
 interface Project {
   id: string;
@@ -212,7 +213,7 @@ export const Projects: React.FC = () => {
                       className="p-2 rounded-lg glass-panel hover:text-purple-400 hover:border-purple-500/40 transition text-slate-300"
                       title="View GitHub Repository"
                     >
-                      <Github className="w-4 h-4" />
+                      <GithubIcon className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -342,7 +343,7 @@ export const Projects: React.FC = () => {
                 rel="noreferrer"
                 className="flex items-center gap-1.5 text-xs font-mono text-purple-400 hover:text-purple-300"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
                 View Code on GitHub
               </a>
               {selectedProject.liveUrl && (
