@@ -22,8 +22,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="w-full max-w-4xl h-[90vh] flex flex-col rounded-2xl bg-[#090b14] border border-cyan-500/30 shadow-2xl overflow-hidden">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-4xl h-[90vh] my-auto flex flex-col rounded-2xl bg-[#090b14] border border-cyan-500/30 shadow-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Modal Top Bar */}
         <div className="flex items-center justify-between px-6 py-4 bg-[#0f1322] border-b border-white/10">
           <div className="flex items-center gap-3">

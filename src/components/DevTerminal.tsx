@@ -173,11 +173,15 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md overflow-y-auto"
+      onClick={onClose}
+    >
       <div
-        className={`w-full ${
+        className={`w-full my-auto ${
           isMaximized ? 'h-[92vh] max-w-6xl' : 'max-w-2xl h-[480px]'
         } flex flex-col rounded-xl border border-cyan-500/30 bg-[#090b14] shadow-2xl overflow-hidden transition-all duration-300`}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Terminal Header */}
         <div className="flex items-center justify-between px-4 py-2.5 bg-[#0f1322] border-b border-white/10 select-none">

@@ -277,8 +277,14 @@ export const Projects: React.FC = () => {
 
       {/* Deep-Dive Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="w-full max-w-2xl max-h-[85vh] flex flex-col rounded-2xl bg-[#090b14] border border-cyan-500/40 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 text-left">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="w-full max-w-2xl my-auto max-h-[88vh] flex flex-col rounded-2xl bg-[#090b14] border border-cyan-500/40 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 text-left"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-4 bg-[#0e1220] border-b border-white/10">
               <div className="flex items-center gap-2">
