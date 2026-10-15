@@ -90,75 +90,83 @@ export const HackathonsLeadership: React.FC = () => {
     <section id="leadership" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* Header */}
-        <div className="text-left space-y-1.5 border-b border-white/10 pb-6">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-400">
-            <Award className="w-3.5 h-3.5 text-neutral-400" />
-            <span>Experience & Initiatives</span>
+        <div className="text-left space-y-2 border-b border-white/10 pb-6">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+            <span>[ 04 / INITIATIVES & LEADERSHIP ]</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-heading">
-            Hackathons & Leadership
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
+            Leadership & <span className="font-editorial text-[#03e29c] font-normal">Initiatives</span>
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
-            Technical leadership in hackathons, graphic design for university festivals, and campus community contributions.
+            Engineering leadership in 24-hour hackathons, brand identity for flagship collegiate fests, and campus community coordination.
           </p>
         </div>
 
         {/* Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              className="dev-card rounded-2xl p-5 flex flex-col justify-between text-left"
-            >
-              <div className="space-y-3.5">
-                {/* Top strip */}
-                <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300 text-[10px]">
-                    {exp.type}
-                  </span>
-                  <span className="text-neutral-400 flex items-center gap-1 text-[11px]">
-                    <Calendar className="w-3 h-3 text-neutral-500" />
-                    {exp.period}
-                  </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {experiences.map((exp, idx) => {
+            const expNumber = `0${idx + 1}`;
+            return (
+              <div
+                key={idx}
+                className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300"
+              >
+                <div className="space-y-4">
+                  {/* Top strip */}
+                  <div className="flex items-center justify-between text-xs font-mono border-b border-white/5 pb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-neutral-500 font-semibold text-[11px]">
+                        [{expNumber}]
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-[#03e29c] text-[10px]">
+                        {exp.type}
+                      </span>
+                    </div>
+                    <span className="text-neutral-400 flex items-center gap-1 text-[11px]">
+                      <Calendar className="w-3 h-3 text-neutral-500" />
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  {/* Role & Org */}
+                  <div>
+                    <h3 className="text-lg font-bold font-heading text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="text-xs font-medium text-[#03e29c] mt-0.5">
+                      {exp.role}
+                    </p>
+                    <p className="text-[11px] text-neutral-400 font-mono mt-0.5">
+                      {exp.organization}
+                    </p>
+                  </div>
+
+                  {/* Bullet highlights */}
+                  <ul className="space-y-2.5 pt-2 border-t border-white/5">
+                    {exp.highlights.map((h, hIdx) => (
+                      <li key={hIdx} className="flex items-start gap-2 text-xs text-neutral-300 leading-relaxed">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#03e29c] shrink-0 mt-0.5" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* Role & Org */}
-                <div>
-                  <h3 className="text-base sm:text-lg font-bold font-heading text-white">
-                    {exp.title}
-                  </h3>
-                  <p className="text-xs font-medium text-neutral-300 mt-0.5">
-                    {exp.role}
-                  </p>
-                  <p className="text-[11px] text-neutral-400 font-mono">
-                    {exp.organization}
-                  </p>
-                </div>
-
-                {/* Bullet highlights */}
-                <ul className="space-y-2 pt-2 border-t border-white/5">
-                  {exp.highlights.map((h, hIdx) => (
-                    <li key={hIdx} className="flex items-start gap-2 text-xs text-neutral-300 leading-relaxed">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-neutral-500 shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </li>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-5">
+                  {exp.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10"
+                    >
+                      {tag}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/5 mt-4">
-                {exp.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.02] text-neutral-400 border border-white/5"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

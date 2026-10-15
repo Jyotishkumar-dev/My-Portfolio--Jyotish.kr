@@ -130,30 +130,30 @@ export const Projects: React.FC = () => {
     <section id="projects" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6 text-left">
-          <div className="space-y-1.5">
-            <div className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-400">
-              <Layers className="w-3.5 h-3.5 text-neutral-400" />
-              <span>Selected Work</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-white/10 pb-6 text-left">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span>[ 02 / SELECTED WORKS ]</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-heading">
-              Featured Projects
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
+              Featured <span className="font-editorial text-[#03e29c] font-normal">Projects</span>
             </h2>
             <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
-              Full-stack applications and AI solutions built with modern TypeScript, Supabase, Next.js, and Express.
+              Production web applications, multimodal AI workflows, and campus platforms engineered with scalable TypeScript architecture.
             </p>
           </div>
 
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1 self-start md:self-auto bg-[#11131a] p-1 rounded-xl border border-white/5">
+          {/* Filter Tabs (MK Vision studio pills style) */}
+          <div className="flex flex-wrap items-center gap-1.5 self-start md:self-auto bg-[#0d1118] p-1.5 rounded-2xl border border-white/10">
             {(['All', 'Full-Stack', 'AI & Machine Learning', 'Campus Systems'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 ${
                   activeFilter === cat
-                    ? 'bg-neutral-800 text-white font-semibold'
-                    : 'text-neutral-400 hover:text-white'
+                    ? 'bg-white text-neutral-950 font-semibold shadow-sm'
+                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {cat}
@@ -162,112 +162,122 @@ export const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="dev-card rounded-2xl p-6 flex flex-col justify-between text-left"
-            >
-              <div className="space-y-4">
-                {/* Header row */}
-                <div className="flex items-center justify-between gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono text-neutral-300 bg-white/5 border border-white/10">
-                    {project.badge}
-                  </span>
+        {/* Project Showcase Grid (MK Vision & Auge XP Studio Cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProjects.map((project, index) => {
+            const projectNumber = `0${index + 1} / 0${projects.length}`;
+            return (
+              <div
+                key={project.id}
+                className="studio-card group rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="space-y-4">
+                  {/* Studio Index & Badges */}
+                  <div className="flex items-center justify-between gap-2 border-b border-white/5 pb-3">
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-xs font-mono text-neutral-500 font-semibold tracking-wider">
+                        [{projectNumber}]
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-[#03e29c] bg-[#03e29c]/10 border border-[#03e29c]/20">
+                        {project.badge}
+                      </span>
+                    </div>
 
-                  <div className="flex items-center gap-2">
-                    {project.liveUrl && (
+                    <div className="flex items-center gap-2">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono text-[#03e29c] bg-[#03e29c]/10 hover:bg-[#03e29c]/20 border border-[#03e29c]/20 transition"
+                          title="Open Live Production App"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c] animate-pulse" />
+                          <span>Live</span>
+                          <ExternalLink className="w-3 h-3 ml-0.5" />
+                        </a>
+                      )}
                       <a
-                        href={project.liveUrl}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition"
-                        title="Live Site"
+                        className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition border border-white/5"
+                        title="View GitHub Repository"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <GithubIcon className="w-3.5 h-3.5" />
                       </a>
-                    )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition"
-                      title="GitHub Code"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                    </a>
+                    </div>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="pt-1">
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-[#03e29c] transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-neutral-400 font-mono mt-1">
+                      {project.subtitle}
+                    </p>
+                    <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed mt-3">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Deliverable Metrics Strip */}
+                  <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-black/30 border border-white/5">
+                    {project.stats.map((s, idx) => (
+                      <div key={idx} className="overflow-hidden">
+                        <span className="text-[10px] text-neutral-500 font-mono block uppercase tracking-wider">{s.label}</span>
+                        <span className="text-xs font-medium text-neutral-200 truncate block mt-0.5">{s.value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech stack pills (MK Vision style) */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10 hover:border-white/20 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Title & Description */}
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold font-heading text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs text-neutral-400 font-mono mt-0.5">
-                    {project.subtitle}
-                  </p>
-                  <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed mt-2.5">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-2 py-2.5 border-y border-white/5">
-                  {project.stats.map((s, idx) => (
-                    <div key={idx}>
-                      <span className="text-[10px] text-neutral-500 font-mono block">{s.label}</span>
-                      <span className="text-xs font-medium text-neutral-200 truncate block">{s.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.03] text-neutral-400 border border-white/5"
-                    >
-                      {tech}
+                {/* Bottom CTA to view details */}
+                <div className="pt-5 mt-4 border-t border-white/5">
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] hover:border-[#03e29c]/40 text-xs font-medium text-neutral-300 hover:text-white border border-white/10 transition duration-200"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Cpu className="w-3.5 h-3.5 text-[#03e29c]" />
+                      <span>Inspect Architecture & Technical Specs</span>
                     </span>
-                  ))}
+                    <ChevronRight className="w-4 h-4 text-neutral-400 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
                 </div>
               </div>
-
-              {/* Bottom CTA to view details */}
-              <div className="pt-5">
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full flex items-center justify-between px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-xs font-medium text-neutral-300 hover:text-white border border-white/5 transition"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <Cpu className="w-3.5 h-3.5 text-neutral-400" />
-                    Architecture & Implementation Details
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-neutral-500" />
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       {/* Deep-Dive Project Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="w-full max-w-xl my-auto max-h-[85vh] flex flex-col rounded-2xl bg-[#0f1118] border border-white/15 shadow-2xl overflow-hidden text-left"
+            className="w-full max-w-xl my-auto max-h-[85vh] flex flex-col rounded-2xl bg-[#0d1118] border border-white/15 shadow-2xl overflow-hidden text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#141721]">
-              <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-white/10 text-neutral-300">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#121722]">
+              <div className="flex items-center gap-2.5">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#03e29c]/15 text-[#03e29c] border border-[#03e29c]/30">
                   {selectedProject.badge}
                 </span>
                 <h3 className="text-base font-bold text-white font-heading">
@@ -276,27 +286,27 @@ export const Projects: React.FC = () => {
               </div>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="p-1 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition"
+                className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Modal Body */}
-            <div className="p-5 overflow-y-auto space-y-5 text-xs sm:text-sm text-neutral-300">
+            <div className="p-6 overflow-y-auto space-y-6 text-xs sm:text-sm text-neutral-300">
               <div>
-                <h4 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1.5">Overview</h4>
+                <h4 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-2">Overview</h4>
                 <p className="leading-relaxed text-neutral-300">{selectedProject.longDescription}</p>
               </div>
 
               <div>
-                <h4 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-2 flex items-center gap-1.5">
-                  <Database className="w-3.5 h-3.5 text-neutral-400" /> Key Implementation Details
+                <h4 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-2.5 flex items-center gap-1.5">
+                  <Database className="w-3.5 h-3.5 text-[#03e29c]" /> Key Implementation Details
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {selectedProject.architectureDetails.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-xs text-neutral-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-neutral-400 shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs text-neutral-300">
+                      <CheckCircle2 className="w-4 h-4 text-[#03e29c] shrink-0 mt-0.5" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -309,7 +319,7 @@ export const Projects: React.FC = () => {
                   {selectedProject.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded text-xs font-mono bg-white/5 text-neutral-300 border border-white/10"
+                      className="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 text-neutral-200 border border-white/10"
                     >
                       {tech}
                     </span>
@@ -319,7 +329,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="px-5 py-3 border-t border-white/10 bg-[#141721] flex items-center justify-between">
+            <div className="px-6 py-4 border-t border-white/10 bg-[#121722] flex items-center justify-between">
               <a
                 href={selectedProject.githubUrl}
                 target="_blank"
@@ -327,17 +337,17 @@ export const Projects: React.FC = () => {
                 className="flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-white"
               >
                 <GithubIcon className="w-4 h-4" />
-                View GitHub Repository
+                <span>View GitHub Repository</span>
               </a>
               {selectedProject.liveUrl && (
                 <a
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-neutral-950 text-xs font-medium hover:bg-neutral-200 transition"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-neutral-950 text-xs font-medium hover:bg-neutral-200 transition"
                 >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  Live Demo
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-950" />
+                  <span>Live Production Demo</span>
                 </a>
               )}
             </div>

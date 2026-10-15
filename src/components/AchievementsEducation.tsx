@@ -68,42 +68,42 @@ export const AchievementsEducation: React.FC = () => {
     <section id="education" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-12 text-left">
         {/* Section Header */}
-        <div className="space-y-1.5 border-b border-white/10 pb-6">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-400">
-            <GraduationCap className="w-3.5 h-3.5 text-neutral-400" />
-            <span>Academic Background</span>
+        <div className="space-y-2 border-b border-white/10 pb-6">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+            <span>[ 05 / ACADEMICS & PROBLEM SOLVING ]</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-heading">
-            Education & Problem Solving
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
+            Education & <span className="font-editorial text-[#03e29c] font-normal">Problem Solving</span>
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
-            Formal computer science education, data structures practice on LeetCode, and technical certifications.
+            Formal computer science education, data structures and algorithms practice on LeetCode, and accredited engineering certifications.
           </p>
         </div>
 
-        {/* LeetCode Milestone Card (Clean & Realistic) */}
-        <div className="dev-card rounded-2xl p-6 border border-white/10">
+        {/* LeetCode Milestone Card (Clean Studio Card) */}
+        <div className="studio-card rounded-2xl p-6 sm:p-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-neutral-300">
-                <LeetCodeIcon className="w-3.5 h-3.5 text-amber-400" />
-                <span>LeetCode Practice</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-xs font-mono text-[#03e29c]">
+                <LeetCodeIcon className="w-3.5 h-3.5 text-[#03e29c]" />
+                <span>LeetCode Algorithmic Practice</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
                 Solved 55+ Algorithmic Problems
               </h3>
 
-              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed max-w-xl">
-                Practicing daily problem-solving focusing on core data structures, time complexity analysis, and pattern recognition using <span className="text-neutral-200 font-medium">Java</span> and <span className="text-neutral-200 font-medium">C++</span>.
+              <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed max-w-xl">
+                Practicing algorithmic problem solving focusing on time & space complexity, pattern recognition, and robust edge-case handling using <span className="text-white font-medium">Java</span> and <span className="text-white font-medium">C++</span>.
               </p>
 
               {/* Topics */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-1.5 pt-2">
                 {leetCodeTopics.map((topic) => (
                   <span
                     key={topic}
-                    className="px-2.5 py-1 rounded text-[11px] font-mono bg-white/[0.03] text-neutral-300 border border-white/5"
+                    className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10"
                   >
                     {topic}
                   </span>
@@ -112,76 +112,88 @@ export const AchievementsEducation: React.FC = () => {
             </div>
 
             {/* Quick Stat box */}
-            <div className="flex md:flex-col items-center justify-center p-5 rounded-xl bg-neutral-900/60 border border-white/5 min-w-[160px] text-center">
-              <span className="text-3xl sm:text-4xl font-bold font-heading text-white">55+</span>
-              <span className="text-[11px] text-neutral-400 font-mono mt-1">Questions Solved</span>
-              <span className="text-[10px] text-neutral-500 font-mono mt-0.5">Java • C++</span>
+            <div className="flex md:flex-col items-center justify-center p-6 rounded-2xl bg-black/40 border border-white/10 min-w-[180px] text-center">
+              <span className="text-4xl sm:text-5xl font-bold font-heading text-white text-gradient-emerald">55+</span>
+              <span className="text-xs text-neutral-300 font-mono mt-1 font-semibold">Problems Solved</span>
+              <span className="text-[10px] text-[#03e29c] font-mono mt-1 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" /> Java & C++ Focus
+              </span>
             </div>
           </div>
         </div>
 
         {/* Education Timeline */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-neutral-400" />
-            <h3 className="text-lg font-bold font-heading text-white">Education Timeline</h3>
+        <div className="space-y-5">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-[#03e29c]" />
+              <h3 className="text-xl font-bold font-heading text-white">Academic Qualifications</h3>
+            </div>
+            <span className="text-xs font-mono text-neutral-400">Verified Records</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {educationList.map((edu, idx) => (
-              <div
-                key={idx}
-                className="dev-card rounded-2xl p-5 flex flex-col justify-between text-left"
-              >
-                <div className="space-y-2.5">
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-200 text-[11px] font-medium">
-                      {edu.score}
-                    </span>
-                    <span className="text-neutral-400 text-[11px]">{edu.period}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {educationList.map((edu, idx) => {
+              const eduNumber = `0${idx + 1}`;
+              return (
+                <div
+                  key={idx}
+                  className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-xs font-mono border-b border-white/5 pb-2.5">
+                      <span className="text-neutral-500 font-semibold text-[11px]">[{eduNumber}]</span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-[#03e29c] text-xs font-semibold">
+                        {edu.score}
+                      </span>
+                    </div>
+
+                    <h4 className="text-sm font-bold font-heading text-white leading-snug">
+                      {edu.institution}
+                    </h4>
+                    <p className="text-xs text-neutral-300 font-medium">
+                      {edu.degree}
+                    </p>
+                    <p className="text-xs text-neutral-400 leading-relaxed pt-2 border-t border-white/5">
+                      {edu.focus}
+                    </p>
                   </div>
 
-                  <h4 className="text-sm font-bold font-heading text-white leading-snug">
-                    {edu.institution}
-                  </h4>
-                  <p className="text-xs text-neutral-400 font-medium">
-                    {edu.degree}
-                  </p>
-                  <p className="text-xs text-neutral-400 leading-relaxed pt-2 border-t border-white/5">
-                    {edu.focus}
-                  </p>
+                  <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+                    <span>{edu.period}</span>
+                    <span>📍 {edu.location}</span>
+                  </div>
                 </div>
-
-                <div className="pt-3 text-[11px] text-neutral-400 font-mono">
-                  📍 {edu.location}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* Certifications Grid */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <Award className="w-4 h-4 text-neutral-400" />
-            <h3 className="text-lg font-bold font-heading text-white">Certifications</h3>
+        <div className="space-y-5">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#03e29c]" />
+              <h3 className="text-xl font-bold font-heading text-white">Accredited Certifications</h3>
+            </div>
+            <span className="text-xs font-mono text-neutral-400">Professional Credentials</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
-                className="dev-card rounded-xl p-4 flex flex-col justify-between text-left"
+                className="studio-card rounded-xl p-5 flex flex-col justify-between text-left"
               >
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-mono text-neutral-400 block">
+                <div className="space-y-2">
+                  <span className="text-[10px] font-mono text-[#03e29c] block uppercase tracking-wider">
                     {cert.tag}
                   </span>
                   <h4 className="text-xs sm:text-sm font-semibold text-white leading-snug">
                     {cert.title}
                   </h4>
                 </div>
-                <p className="text-[11px] text-neutral-400 font-mono pt-2 border-t border-white/5 mt-3">
+                <p className="text-[11px] text-neutral-400 font-mono pt-3 border-t border-white/5 mt-3">
                   {cert.issuer}
                 </p>
               </div>
