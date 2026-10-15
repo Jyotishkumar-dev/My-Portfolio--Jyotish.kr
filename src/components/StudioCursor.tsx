@@ -65,14 +65,14 @@ export const StudioCursor: React.FC = () => {
       <div
         className={`rounded-full transition-all duration-200 border pointer-events-none ${
           isHovered
-            ? 'w-10 h-10 border-[#00F0FF]/70 bg-[#00F0FF]/15 scale-110 shadow-[0_0_18px_rgba(0,240,255,0.4)]'
+            ? 'w-10 h-10 border-[#8B5CF6]/70 bg-[#8B5CF6]/15 scale-110 shadow-[0_0_18px_rgba(139,92,246,0.4)]'
             : 'w-6 h-6 border-white/25 bg-transparent scale-100'
         }`}
       />
       {/* Inner center dot */}
       <div
         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-150 ${
-          isHovered ? 'w-1.5 h-1.5 bg-[#FF2E93] shadow-[0_0_8px_#FF2E93]' : 'w-1 h-1 bg-white/70'
+          isHovered ? 'w-1.5 h-1.5 bg-[#8B5CF6] shadow-[0_0_8px_#8B5CF6]' : 'w-1 h-1 bg-white/70'
         }`}
       />
     </div>

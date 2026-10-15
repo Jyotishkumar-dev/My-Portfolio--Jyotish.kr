@@ -86,9 +86,9 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
 
       case 'projects':
         res = (
-          <div className="space-y-1.5 text-neutral-300">
-            <p>1. <span className="text-white font-medium">RESTOCK AI (DEAD-STOCK)</span>: Multimodal Gemini AI e-waste recovery platform (React 19, Express, Drizzle, Postgres) — <a href="https://dead-stock-eta.vercel.app" target="_blank" rel="noreferrer" className="text-[#00F0FF] underline">Live</a></p>
-            <p>2. <span className="text-white font-medium">Campus Resolve</span>: Collegiate hostel & mess service management (Next.js 16, Supabase, Tailwind) — <a href="https://github.com/Jyotishkumar-dev/Hostel-Mess-Service-Management-Platform" target="_blank" rel="noreferrer" className="text-[#00F0FF] underline">GitHub</a></p>
+          <div className="space-y-1.5 text-slate-300">
+            <p>1. <span className="text-white font-medium">RESTOCK AI (DEAD-STOCK)</span>: Multimodal Gemini AI e-waste recovery platform (React 19, Express, Drizzle, Postgres) — <a href="https://dead-stock-eta.vercel.app" target="_blank" rel="noreferrer" className="text-[#8B5CF6] underline">Live</a></p>
+            <p>2. <span className="text-white font-medium">Campus Resolve</span>: Collegiate hostel & mess service management (Next.js 16, Supabase, Tailwind) — <a href="https://github.com/Jyotishkumar-dev/Hostel-Mess-Service-Management-Platform" target="_blank" rel="noreferrer" className="text-[#8B5CF6] underline">GitHub</a></p>
             <p>3. <span className="text-white font-medium">SmartAttend</span>: Academic attendance system with 5-tier role-based access</p>
             <p>4. <span className="text-white font-medium">KrishiFleet AI</span>: Farm machinery recommendation and rental platform built during SQUidHACK 2026 (Tech Lead)</p>
           </div>
@@ -97,9 +97,9 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
 
       case 'leetcode':
         res = (
-          <div className="space-y-1 text-neutral-300">
+          <div className="space-y-1 text-slate-300">
             <p className="text-white font-medium">LeetCode Problem Solving:</p>
-            <p>Solved <span className="text-[#00F0FF] font-semibold">55+</span> problems focusing on foundational DSA in Java & C++.</p>
+            <p>Solved <span className="text-[#8B5CF6] font-semibold">55+</span> problems focusing on foundational DSA in Java & C++.</p>
             <p>Key topics: Arrays, Two Pointers, Sliding Window, Linked Lists, Binary Search, Trees.</p>
           </div>
         );
@@ -107,7 +107,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
 
       case 'leadership':
         res = (
-          <div className="space-y-1 text-neutral-300">
+          <div className="space-y-1 text-slate-300">
             <p>• <span className="text-white font-medium">Arkfest '26:</span> Graphic Designer & Organizing Committee Member</p>
             <p>• <span className="text-white font-medium">UDBHAV AI Sprint '26:</span> Graphic Designer & Organizing Committee Member</p>
             <p>• <span className="text-white font-medium">SQUidHACK 2026:</span> Technical Lead (Participant) — KrishiFleet AI</p>
@@ -119,19 +119,19 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
 
       case 'contact':
         res = (
-          <div className="space-y-1 text-neutral-300">
-            <p>Email: <a href="mailto:jyotishkumarjhar@gmail.com" className="text-[#00F0FF] underline">jyotishkumarjhar@gmail.com</a></p>
+          <div className="space-y-1 text-slate-300">
+            <p>Email: <a href="mailto:jyotishkumarjhar@gmail.com" className="text-[#8B5CF6] underline">jyotishkumarjhar@gmail.com</a></p>
             <p>Phone: +91-98354 02279</p>
             <p>Location: Indore, Madhya Pradesh, India</p>
-            <p>GitHub: <a href="https://github.com/Jyotishkumar-dev" target="_blank" rel="noreferrer" className="text-[#00F0FF] underline">github.com/Jyotishkumar-dev</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/jyotish-kr-verma-0601bb387" target="_blank" rel="noreferrer" className="text-[#00F0FF] underline">linkedin.com/in/jyotish-kr-verma-0601bb387</a></p>
+            <p>GitHub: <a href="https://github.com/Jyotishkumar-dev" target="_blank" rel="noreferrer" className="text-[#8B5CF6] underline">github.com/Jyotishkumar-dev</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/jyotish-kr-verma-0601bb387" target="_blank" rel="noreferrer" className="text-[#8B5CF6] underline">linkedin.com/in/jyotish-kr-verma-0601bb387</a></p>
           </div>
         );
         break;
 
       case 'resume':
         window.open('/assets/Jyotish_Kumar_Resume.pdf', '_blank');
-        res = <p className="text-neutral-300">Opening resume PDF in new tab...</p>;
+        res = <p className="text-slate-300">Opening resume PDF in new tab...</p>;
         break;
 
       case 'exit':
@@ -146,7 +146,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
 
       default:
         res = (
-          <p className="text-[#A3A3C2]">
+          <p className="text-[#94A3B8]">
             Command not found: <span className="font-mono text-white">{cmd}</span>. Type <span className="text-white font-mono">help</span> for assistance.
           </p>
         );
@@ -164,21 +164,21 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
       <div
         className={`w-full my-auto ${
           isMaximized ? 'h-[90vh] max-w-5xl' : 'max-w-2xl h-[440px]'
-        } flex flex-col rounded-2xl border border-white/15 bg-[#0B0813] shadow-2xl overflow-hidden transition-all duration-200`}
+        } flex flex-col rounded-2xl border border-[#8B5CF6]/30 bg-[#0B0D1B] shadow-2xl overflow-hidden transition-all duration-200`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Terminal Header */}
-        <div className="flex items-center justify-between px-4 py-2.5 bg-[#141024] border-b border-white/10 select-none">
+        <div className="flex items-center justify-between px-4 py-2.5 bg-[#0E1225] border-b border-white/10 select-none">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-neutral-700 cursor-pointer hover:bg-red-500" onClick={onClose} />
-            <div className="w-3 h-3 rounded-full bg-neutral-700 cursor-pointer hover:bg-yellow-500" onClick={() => setHistory([])} />
-            <div className="w-3 h-3 rounded-full bg-neutral-700 cursor-pointer hover:bg-green-500" onClick={() => setIsMaximized(!isMaximized)} />
-            <span className="text-xs text-[#A3A3C2] ml-2 font-mono flex items-center gap-1.5">
-              <TerminalIcon className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <div className="w-3 h-3 rounded-full bg-slate-700 cursor-pointer hover:bg-red-500" onClick={onClose} />
+            <div className="w-3 h-3 rounded-full bg-slate-700 cursor-pointer hover:bg-yellow-500" onClick={() => setHistory([])} />
+            <div className="w-3 h-3 rounded-full bg-slate-700 cursor-pointer hover:bg-green-500" onClick={() => setIsMaximized(!isMaximized)} />
+            <span className="text-xs text-[#94A3B8] ml-2 font-mono flex items-center gap-1.5">
+              <TerminalIcon className="w-3.5 h-3.5 text-[#8B5CF6]" />
               jyotish@indore: ~
             </span>
           </div>
-          <div className="flex items-center gap-2 text-[#A3A3C2]">
+          <div className="flex items-center gap-2 text-[#94A3B8]">
             <button
               onClick={() => setIsMaximized(!isMaximized)}
               className="p-1 hover:text-white transition"
@@ -197,12 +197,12 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Terminal Body */}
-        <div className="flex-1 p-4 overflow-y-auto font-mono text-xs text-neutral-200 space-y-3">
+        <div className="flex-1 p-4 overflow-y-auto font-mono text-xs text-slate-200 space-y-3">
           {history.map((item, idx) => (
             <div key={idx} className="space-y-1">
               {item.command && (
-                <div className="flex items-center gap-2 text-neutral-200">
-                  <span className="text-neutral-500">jyotish@indore:~$</span>
+                <div className="flex items-center gap-2 text-slate-200">
+                  <span className="text-slate-500">jyotish@indore:~$</span>
                   <span className="font-semibold text-white">{item.command}</span>
                 </div>
               )}
@@ -213,19 +213,19 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Command Input Form */}
-        <form onSubmit={handleCommand} className="flex items-center gap-2 p-3 bg-[#0F0C1B] border-t border-white/10">
-          <span className="text-[#00F0FF] font-mono text-xs pl-1">jyotish@indore:~$</span>
+        <form onSubmit={handleCommand} className="flex items-center gap-2 p-3 bg-[#0E1225] border-t border-white/10">
+          <span className="text-[#8B5CF6] font-mono text-xs pl-1">jyotish@indore:~$</span>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type 'help'..."
-            className="flex-1 bg-transparent text-xs font-mono text-white focus:outline-none placeholder-neutral-600"
+            className="flex-1 bg-transparent text-xs font-mono text-white focus:outline-none placeholder-slate-600"
           />
           <button
             type="submit"
-            className="p-1.5 rounded text-[#00F0FF] hover:text-white transition"
+            className="p-1.5 rounded text-[#8B5CF6] hover:text-white transition"
           >
             <CornerDownLeft className="w-3.5 h-3.5" />
           </button>
