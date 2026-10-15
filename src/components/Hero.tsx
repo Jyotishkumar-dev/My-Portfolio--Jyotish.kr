@@ -22,15 +22,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
         {/* Main Two-Column Hero Row (Seamless & Airy Layout) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Editorial Statement & Bio */}
-          <div className="lg:col-span-7 space-y-7 text-left">
-            {/* Availability Anchor Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-neutral-300">
-              <span className="w-2 h-2 rounded-full bg-[#03e29c] animate-pulse" />
-              <span className="text-white font-medium">Available for 2026 Internships</span>
-              <span className="text-neutral-600">•</span>
-              <span className="text-neutral-400 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-neutral-400" /> Indore, M.P.
+          <div className="lg:col-span-7 space-y-7 text-left reveal-on-scroll">
+            {/* Creative Coder Badge & Availability Anchor Pill */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF5500] text-white text-xs font-semibold tracking-wide shadow-md shadow-[#FF5500]/30 hover:scale-105 transition-transform cursor-default">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                Creative Coder
               </span>
+
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-[#FF5500]/25 text-xs font-mono text-neutral-300 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse" />
+                <span className="text-white font-medium">Available for 2026 Internships</span>
+                <span className="text-neutral-600">•</span>
+                <span className="text-neutral-400 flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-[#FF5500]" /> Indore, M.P.
+                </span>
+              </div>
             </div>
 
             {/* Studio Heading & Typography */}
@@ -38,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-heading leading-[1.06]">
                 Jyotish Kumar
               </h1>
-              <p className="text-xl sm:text-2xl text-neutral-300 font-light leading-snug">
+              <p className="text-xl sm:text-2xl text-neutral-200 font-light leading-snug">
                 Engineering web systems with architectural{' '}
                 <span className="font-editorial text-white text-2xl sm:text-3xl font-normal">
                   precision
@@ -52,31 +59,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
             </div>
 
             {/* Authentic Grounded Biography */}
-            <p className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-xl">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-xl">
               Computer Science undergraduate at{' '}
-              <span className="text-neutral-200 font-medium">
+              <span className="text-white font-medium">
                 SAGE University, Indore
               </span>{' '}
               (Alta School of Technology, CGPA 7.8, Class of 2029). I build full-stack web platforms using{' '}
-              <span className="text-neutral-200">React 19</span>,{' '}
-              <span className="text-neutral-200">Next.js 16</span>,{' '}
-              <span className="text-neutral-200">TypeScript</span>, and{' '}
-              <span className="text-neutral-200">Supabase</span> — backed by daily algorithmic practice on LeetCode.
+              <span className="text-white">React 19</span>,{' '}
+              <span className="text-white">Next.js 16</span>,{' '}
+              <span className="text-white">TypeScript</span>, and{' '}
+              <span className="text-white">Supabase</span> — backed by daily algorithmic practice on LeetCode.
             </p>
 
             {/* Interactive Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href="#projects"
-                className="btn-magnetic flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-neutral-950 font-medium text-xs sm:text-sm hover:bg-neutral-100 transition shadow-sm"
+                className="btn-primary-orange flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm"
               >
                 <span>Selected Works</span>
-                <ArrowDown className="w-3.5 h-3.5 text-neutral-900" />
+                <ArrowDown className="w-3.5 h-3.5 text-white" />
               </a>
 
               <button
                 onClick={onOpenResume}
-                className="btn-magnetic flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0c131a] border border-white/10 hover:border-white/20 text-neutral-200 font-medium text-xs sm:text-sm transition"
+                className="btn-magnetic flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141414]/80 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 text-neutral-200 font-medium text-xs sm:text-sm transition"
               >
                 <Download className="w-3.5 h-3.5 text-neutral-400" />
                 <span>Resume PDF</span>
@@ -84,13 +91,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
 
               <button
                 onClick={copyEmail}
-                className="btn-magnetic flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-[#0c131a] border border-white/10 hover:border-white/20 text-xs font-mono text-neutral-300 transition"
+                className="btn-magnetic flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-[#141414]/80 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 text-xs font-mono text-neutral-300 transition"
                 title="Copy direct email"
               >
                 {emailCopied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-[#03e29c]" />
-                    <span className="text-[#03e29c]">Copied</span>
+                    <Check className="w-3.5 h-3.5 text-[#FF5500]" />
+                    <span className="text-[#FF5500]">Copied</span>
                   </>
                 ) : (
                   <>
@@ -102,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
 
               <button
                 onClick={onOpenTerminal}
-                className="p-2.5 rounded-xl bg-[#0c131a] border border-white/10 hover:border-white/25 text-neutral-400 hover:text-white transition"
+                className="p-2.5 rounded-xl bg-[#141414]/80 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 text-neutral-400 hover:text-white transition"
                 title="Launch Developer CLI (~)"
               >
                 <Terminal className="w-4 h-4 text-neutral-300" />
@@ -113,7 +120,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
                   href="https://github.com/Jyotishkumar-dev"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-[#0c131a] border border-white/10 hover:border-white/25 text-neutral-400 hover:text-white transition"
+                  className="p-2.5 rounded-xl bg-[#141414]/80 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 text-neutral-400 hover:text-white transition"
                   title="GitHub Profile"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -122,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
                   href="https://linkedin.com/in/jyotish-kr-verma-0601bb387"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-[#0c131a] border border-white/10 hover:border-white/25 text-neutral-400 hover:text-white transition"
+                  className="p-2.5 rounded-xl bg-[#141414]/80 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 text-neutral-400 hover:text-white transition"
                   title="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -132,9 +139,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
           </div>
 
           {/* Right Column: Seamless Floating Profile Media Card */}
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="lg:col-span-5 flex justify-center reveal-on-scroll">
             <div className="max-w-xs sm:max-w-sm w-full animate-float">
-              <div className="bento-card rounded-3xl p-3 shadow-2xl relative group">
+              <div className="bento-card rounded-3xl p-3 shadow-2xl relative group border border-[#FF5500]/25 hover:border-[#FF5500]/50">
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-950 border border-white/10">
                   <img
                     src="/assets/jyotish-profile.jpg"
@@ -144,11 +151,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
                   />
 
                   {/* Subtle Gradient Shadow */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent pointer-events-none" />
 
                   {/* Top Floating Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-neutral-300 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-neutral-300 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500]" />
                     <span>SOFTWARE ENGINEER</span>
                   </div>
 
@@ -167,7 +174,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
                 {/* Minimalist Footer Strip */}
                 <div className="pt-3 px-2 pb-1 flex items-center justify-between text-left text-neutral-400 font-mono text-[11px]">
                   <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 text-[#03e29c]" />
+                    <MapPin className="w-3 h-3 text-[#FF5500]" />
                     <span>Indore, Madhya Pradesh</span>
                   </div>
                   <div className="flex items-center gap-1 bg-white/[0.04] px-2 py-0.5 rounded-md border border-white/5 text-[10px]">
@@ -182,10 +189,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
         {/* Bottom Stats: Premium Bento Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-white/10">
           {/* Bento Cell 1: LeetCode */}
-          <div className="bento-card rounded-2xl p-5 text-left group">
+          <div className="bento-card rounded-2xl p-5 text-left group reveal-on-scroll">
             <div className="flex items-center justify-between text-neutral-400 mb-3">
               <LeetCodeIcon className="w-4 h-4 text-amber-400" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
             </div>
             <div className="text-2xl sm:text-3xl font-bold font-heading text-white">
               55+
@@ -199,7 +206,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
           </div>
 
           {/* Bento Cell 2: Projects */}
-          <div className="bento-card rounded-2xl p-5 text-left group">
+          <div className="bento-card rounded-2xl p-5 text-left group reveal-on-scroll">
             <div className="flex items-center justify-between text-neutral-400 mb-3">
               <Code2 className="w-4 h-4 text-neutral-300" />
               <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
@@ -216,10 +223,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
           </div>
 
           {/* Bento Cell 3: Leadership */}
-          <div className="bento-card rounded-2xl p-5 text-left group">
+          <div className="bento-card rounded-2xl p-5 text-left group reveal-on-scroll">
             <div className="flex items-center justify-between text-neutral-400 mb-3">
               <Award className="w-4 h-4 text-neutral-300" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
             </div>
             <div className="text-xl sm:text-2xl font-bold font-heading text-white">
               Tech Lead
@@ -233,7 +240,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
           </div>
 
           {/* Bento Cell 4: Academics */}
-          <div className="bento-card rounded-2xl p-5 text-left group">
+          <div className="bento-card rounded-2xl p-5 text-left group reveal-on-scroll">
             <div className="flex items-center justify-between text-neutral-400 mb-3">
               <BookOpen className="w-4 h-4 text-neutral-300" />
               <span className="w-1.5 h-1.5 rounded-full bg-white/30" />

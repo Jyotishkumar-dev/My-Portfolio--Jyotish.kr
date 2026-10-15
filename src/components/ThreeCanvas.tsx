@@ -24,14 +24,14 @@ export const ThreeCanvas: React.FC = () => {
     renderer.setClearColor(0x090a0f, 0);
     container.appendChild(renderer.domElement);
 
-    // MK Vision inspired subtle emerald & starlight particles
+    // Creative Director warm fiery orange, amber & starlight particles
     const particleCount = 260;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const emerald = new THREE.Color('#03e29c');
-    const softSlate = new THREE.Color('#94a3b8');
+    const fieryOrange = new THREE.Color('#FF5500');
+    const warmCoral = new THREE.Color('#FB923C');
     const pureWhite = new THREE.Color('#ffffff');
 
     for (let i = 0; i < particleCount; i++) {
@@ -39,9 +39,9 @@ export const ThreeCanvas: React.FC = () => {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 130;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 90;
 
-      // Mix colors: 35% emerald accent, 45% soft slate, 20% white
+      // Mix colors: 40% fiery orange accent, 35% warm coral, 25% pure white
       const rand = Math.random();
-      const c = rand < 0.35 ? emerald : rand < 0.8 ? softSlate : pureWhite;
+      const c = rand < 0.4 ? fieryOrange : rand < 0.75 ? warmCoral : pureWhite;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;

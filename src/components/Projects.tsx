@@ -130,10 +130,10 @@ export const Projects: React.FC = () => {
     <section id="projects" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-white/10 pb-6 text-left">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-white/10 pb-6 text-left reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
               <span>[ 02 / SELECTED WORKS ]</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
@@ -144,15 +144,15 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Filter Tabs (MK Vision studio pills style) */}
-          <div className="flex flex-wrap items-center gap-1.5 self-start md:self-auto bg-[#0d1118] p-1.5 rounded-2xl border border-white/10">
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5 self-start md:self-auto bg-[#141414]/90 backdrop-blur-md p-1.5 rounded-2xl border border-white/10">
             {(['All', 'Full-Stack', 'AI & Machine Learning', 'Campus Systems'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 ${
                   activeFilter === cat
-                    ? 'bg-white text-neutral-950 font-semibold shadow-sm'
+                    ? 'bg-[#FF5500] text-white font-semibold shadow-md shadow-[#FF5500]/30'
                     : 'text-neutral-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -162,14 +162,14 @@ export const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Project Showcase Grid (MK Vision & Auge XP Studio Cards) */}
+        {/* Project Showcase Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project, index) => {
             const projectNumber = `0${index + 1} / 0${projects.length}`;
             return (
               <div
                 key={project.id}
-                className="studio-card group rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden"
+                className="studio-card group rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden reveal-on-scroll"
               >
                 <div className="space-y-4">
                   {/* Studio Index & Badges */}
@@ -178,7 +178,7 @@ export const Projects: React.FC = () => {
                       <span className="text-xs font-mono text-neutral-500 font-semibold tracking-wider">
                         [{projectNumber}]
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-[#03e29c] bg-[#03e29c]/10 border border-[#03e29c]/20">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-[#FF5500] bg-[#FF5500]/10 border border-[#FF5500]/25">
                         {project.badge}
                       </span>
                     </div>
@@ -189,10 +189,10 @@ export const Projects: React.FC = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono text-[#03e29c] bg-[#03e29c]/10 hover:bg-[#03e29c]/20 border border-[#03e29c]/20 transition"
+                          className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono text-[#FF5500] bg-[#FF5500]/10 hover:bg-[#FF5500]/20 border border-[#FF5500]/25 transition"
                           title="Open Live Production App"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c] animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
                           <span>Live</span>
                           <ExternalLink className="w-3 h-3 ml-0.5" />
                         </a>
@@ -211,7 +211,7 @@ export const Projects: React.FC = () => {
 
                   {/* Title & Description */}
                   <div className="pt-1">
-                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-[#03e29c] transition-colors leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-[#FF5500] transition-colors leading-tight">
                       {project.title}
                     </h3>
                     <p className="text-xs text-neutral-400 font-mono mt-1">
@@ -223,7 +223,7 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {/* Deliverable Metrics Strip */}
-                  <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-black/30 border border-white/5">
+                  <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-black/40 border border-white/5">
                     {project.stats.map((s, idx) => (
                       <div key={idx} className="overflow-hidden">
                         <span className="text-[10px] text-neutral-500 font-mono block uppercase tracking-wider">{s.label}</span>
@@ -232,12 +232,12 @@ export const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Tech stack pills (MK Vision style) */}
+                  {/* Tech stack pills */}
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10 hover:border-white/20 transition-colors"
+                        className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10 hover:border-[#FF5500]/30 transition-colors"
                       >
                         {tech}
                       </span>
@@ -249,10 +249,10 @@ export const Projects: React.FC = () => {
                 <div className="pt-5 mt-4 border-t border-white/5">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] hover:border-[#03e29c]/40 text-xs font-medium text-neutral-300 hover:text-white border border-white/10 transition duration-200"
+                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] hover:border-[#FF5500]/40 text-xs font-medium text-neutral-300 hover:text-white border border-white/10 transition duration-200"
                   >
                     <span className="flex items-center gap-2">
-                      <Cpu className="w-3.5 h-3.5 text-[#03e29c]" />
+                      <Cpu className="w-3.5 h-3.5 text-[#FF5500]" />
                       <span>Inspect Architecture & Technical Specs</span>
                     </span>
                     <ChevronRight className="w-4 h-4 text-neutral-400 group-hover:translate-x-0.5 transition-transform" />

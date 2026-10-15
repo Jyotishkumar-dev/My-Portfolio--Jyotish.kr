@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
+import { AmbientMeshGradient } from './components/AmbientMeshGradient';
 import { ThreeCanvas } from './components/ThreeCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -13,10 +14,14 @@ import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { DevTerminal } from './components/DevTerminal';
 import { StudioCursor } from './components/StudioCursor';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 export function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
+  // Initialize Smooth Scroll Reveal Observer
+  useScrollReveal();
 
   // Initialize Locomotive Scroll v5
   useEffect(() => {
@@ -59,15 +64,15 @@ export function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-neutral-100 bg-[#080b0f] overflow-x-hidden selection:bg-[#03e29c]/25 selection:text-[#03e29c]">
+    <div className="relative min-h-screen text-neutral-100 bg-[#0D0D0D] overflow-x-hidden selection:bg-[#FF5500]/30 selection:text-[#FF7722]">
       {/* Studio Interactive Desktop Cursor */}
       <StudioCursor />
 
-      {/* Subtle Three.js Ambient Canvas */}
-      <ThreeCanvas />
+      {/* Cinematic Ambient Animated Mesh Gradient Layer */}
+      <AmbientMeshGradient />
 
-      {/* Subtle Grid Background */}
-      <div className="fixed inset-0 subtle-grid opacity-30 pointer-events-none z-0" />
+      {/* Subtle Three.js Ambient Floating Starlight/Embers Canvas */}
+      <ThreeCanvas />
 
       {/* Main Content Wrap */}
       <div id="main-content" className="relative z-10 flex flex-col">

@@ -43,15 +43,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
         <a
           href="#about"
           onClick={(e) => handleLinkClick(e, '#about')}
-          className="group flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#0d1118]/85 backdrop-blur-md border border-white/10 hover:border-[#03e29c]/40 transition-all duration-300 shadow-sm"
+          className="group flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#141414]/85 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 transition-all duration-300 shadow-sm"
         >
-          <div className="w-6 h-6 rounded-lg bg-neutral-900 border border-white/10 group-hover:border-[#03e29c]/50 flex items-center justify-center font-mono font-bold text-xs text-white transition-colors">
+          <div className="w-6 h-6 rounded-lg bg-neutral-900 border border-white/10 group-hover:border-[#FF5500]/50 flex items-center justify-center font-mono font-bold text-xs text-white transition-colors">
             JK
           </div>
           <div className="flex flex-col text-left">
             <span className="font-heading font-semibold text-xs text-neutral-100 group-hover:text-white flex items-center gap-1.5">
               Jyotish Kumar
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
             </span>
             <span className="text-[10px] text-neutral-400 font-mono -mt-0.5 flex items-center gap-1">
               <MapPin className="w-2.5 h-2.5 text-neutral-400" /> Indore, M.P.
@@ -84,10 +84,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
           {/* Subtle Dev CLI button */}
           <button
             onClick={onOpenTerminal}
-            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0d1118]/85 backdrop-blur-md border border-white/10 hover:border-white/20 text-neutral-400 hover:text-neutral-200 text-xs font-mono transition"
+            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#141414]/85 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/30 text-neutral-400 hover:text-neutral-200 text-xs font-mono transition"
             title="Open Developer Terminal (~)"
           >
-            <Terminal className="w-3.5 h-3.5 text-[#03e29c]" />
+            <Terminal className="w-3.5 h-3.5 text-[#FF5500]" />
             <span className="text-[11px]">CLI</span>
           </button>
 
@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
           {/* Mobile Menu */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-[#0d1118]/85 backdrop-blur-md border border-white/10 text-neutral-300 hover:text-white"
+            className="md:hidden p-2 rounded-lg bg-[#141414]/85 backdrop-blur-md border border-white/10 text-neutral-300 hover:text-white"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#0d1118]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl pointer-events-auto">
+        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#141414]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-2xl pointer-events-auto">
           <div className="flex flex-col gap-1 text-left">
             {navLinks.map((link) => (
               <a
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
                 }}
                 className="flex items-center gap-1.5 text-xs font-mono text-neutral-400 py-1"
               >
-                <Terminal className="w-3.5 h-3.5 text-[#03e29c]" /> Dev Terminal
+                <Terminal className="w-3.5 h-3.5 text-[#FF5500]" /> Dev Terminal
               </button>
               <span className="text-xs text-neutral-400 font-mono">Indore, M.P.</span>
             </div>

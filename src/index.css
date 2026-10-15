@@ -6,13 +6,17 @@
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     --font-serif: 'Playfair Display', Georgia, serif;
-    --studio-emerald: #03e29c;
-    --studio-bg: #070d12;
+    
+    /* Vibrant Creative Director Orange & Warm Red Theme */
+    --accent-orange: #FF5500;
+    --accent-orange-fiery: #FF4D00;
+    --accent-magenta: #E11D48;
+    --bg-base: #0D0D0D;
   }
 
   body {
     font-family: var(--font-body);
-    background-color: #070d12;
+    background-color: #0D0D0D;
     color: #cbd5e1;
     overflow-x: hidden;
     letter-spacing: -0.015em;
@@ -28,7 +32,7 @@
   }
 }
 
-/* Editorial Serif Italic Accent (MK Vision signature: serif italic for emphasis words) */
+/* Editorial Serif Italic Accent (Creative Director emphasis) */
 .font-editorial {
   font-family: var(--font-serif);
   font-style: italic;
@@ -36,72 +40,118 @@
   letter-spacing: -0.01em;
 }
 
-/* Studio Bento Card Grid */
+/* Glassmorphism Bento Card Grid */
 .bento-card {
-  background: rgba(12, 19, 26, 0.65);
+  background: rgba(20, 20, 20, 0.62);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 77, 0, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(16, 25, 34, 0.85);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 85, 0, 0.45);
+  background: rgba(26, 22, 22, 0.82);
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 20px 40px -12px rgba(255, 77, 0, 0.22), 0 0 25px -4px rgba(255, 77, 0, 0.14), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Studio Glass Cards */
+/* Glassmorphic Studio Section Cards */
 .studio-card {
-  background: rgba(11, 17, 24, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 77, 0, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .studio-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(15, 23, 32, 0.9);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(3, 226, 156, 0.15);
+  border-color: rgba(255, 85, 0, 0.45);
+  background: rgba(26, 22, 22, 0.85);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px -12px rgba(255, 77, 0, 0.24), 0 0 30px -6px rgba(255, 77, 0, 0.16), inset 0 1px 0 0 rgba(255, 85, 0, 0.2);
 }
 
 .studio-pill {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .studio-pill:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 85, 0, 0.12);
+  border-color: rgba(255, 85, 0, 0.35);
+  color: #ffffff;
 }
 
-/* Studio Accent Tokens */
-.text-emerald-studio {
-  color: #03e29c;
+/* Creative Director Orange Button */
+.btn-primary-orange {
+  background: linear-gradient(135deg, #FF5500 0%, #FF3D00 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px -2px rgba(255, 77, 0, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-emerald-studio {
-  background-color: #03e29c;
+.btn-primary-orange:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px 0 rgba(255, 77, 0, 0.65), 0 0 20px rgba(255, 85, 0, 0.35);
+  filter: brightness(1.08);
 }
 
-.border-emerald-studio {
-  border-color: #03e29c;
+.btn-primary-orange:active {
+  transform: translateY(0) scale(0.99);
 }
 
-/* Minimalist Grid Pattern */
+/* Subtle Grid Pattern */
 .subtle-grid {
-  background-size: 44px 44px;
+  background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
-/* Float Animation for Profile Photo Card */
+/* Slow Ambient Mesh Gradient Animations */
+@keyframes meshPulseSlow {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.15) translate(20px, -25px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.85;
+  }
+}
+
+@keyframes meshDriftSlow {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate(-30px, 30px) rotate(8deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 0.75;
+  }
+}
+
+.animate-mesh-pulse {
+  animation: meshPulseSlow 18s ease-in-out infinite;
+}
+
+.animate-mesh-drift {
+  animation: meshDriftSlow 24s ease-in-out infinite;
+}
+
+/* Smooth Floating Animation for Profile Card */
 @keyframes studioFloat {
   0%, 100% {
     transform: translateY(0px);
@@ -115,11 +165,24 @@
   animation: studioFloat 6s ease-in-out infinite;
 }
 
+/* Scroll Reveal Classes (cubic-bezier easing for premium studio feel) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Magnetic Button Hover State */
 .btn-magnetic {
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .btn-magnetic:hover {
@@ -130,20 +193,20 @@
   transform: translateY(0);
 }
 
-/* Clean Custom Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #070d12;
+  background: #0D0D0D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #15222e;
+  background: #262626;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #03e29c;
+  background: #FF5500;
 }
