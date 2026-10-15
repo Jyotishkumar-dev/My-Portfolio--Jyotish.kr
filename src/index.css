@@ -7,13 +7,13 @@
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     --font-serif: 'Playfair Display', Georgia, serif;
     --studio-emerald: #03e29c;
-    --studio-bg: #080b0f;
+    --studio-bg: #070d12;
   }
 
   body {
     font-family: var(--font-body);
-    background-color: #080b0f;
-    color: #e2e8f0;
+    background-color: #070d12;
+    color: #cbd5e1;
     overflow-x: hidden;
     letter-spacing: -0.015em;
   }
@@ -28,17 +28,34 @@
   }
 }
 
-/* Editorial Serif Italic Accent (MK Vision / Auge XP signature) */
+/* Editorial Serif Italic Accent (MK Vision signature: serif italic for emphasis words) */
 .font-editorial {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.01em;
+}
+
+/* Studio Bento Card Grid */
+.bento-card {
+  background: rgba(12, 19, 26, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(16, 25, 34, 0.85);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Studio Glass Cards */
 .studio-card {
-  background: rgba(13, 17, 24, 0.72);
+  background: rgba(11, 17, 24, 0.72);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -47,20 +64,20 @@
 }
 
 .studio-card:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(18, 23, 32, 0.88);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(3, 226, 156, 0.18);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(15, 23, 32, 0.9);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(3, 226, 156, 0.15);
 }
 
 .studio-pill {
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.2s ease;
 }
 
 .studio-pill:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 /* Studio Accent Tokens */
@@ -78,36 +95,31 @@
 
 /* Minimalist Grid Pattern */
 .subtle-grid {
-  background-size: 40px 40px;
+  background-size: 44px 44px;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
-/* Smooth Gradient Headline */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Float Animation for Profile Photo Card */
+@keyframes studioFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #ffffff 20%, #03e29c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Sticky Stack Effect Helpers */
-.sticky-card {
-  position: sticky;
-  top: 96px;
+.animate-float {
+  animation: studioFloat 6s ease-in-out infinite;
 }
 
 /* Magnetic Button Hover State */
 .btn-magnetic {
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
 .btn-magnetic:hover {
@@ -124,11 +136,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080b0f;
+  background: #070d12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1a222e;
+  background: #15222e;
   border-radius: 9999px;
 }
 
