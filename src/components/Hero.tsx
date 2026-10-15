@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Download, Mail, Check, MapPin, Code2, Database } from 'lucide-react';
+import { ArrowRight, Download, Mail, Check, MapPin, Code2, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 interface HeroProps {
@@ -81,6 +81,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenTerminal }) => {
                   <span>Copy Email</span>
                 </>
               )}
+            </button>
+
+            <button
+              onClick={onOpenTerminal}
+              className="p-2.5 rounded-xl bg-[#141721] border border-white/10 hover:border-white/20 text-neutral-400 hover:text-white transition"
+              title="Launch Dev Terminal (~)"
+            >
+              <Terminal className="w-4 h-4" />
             </button>
 
             <div className="flex items-center gap-1.5 pl-1">

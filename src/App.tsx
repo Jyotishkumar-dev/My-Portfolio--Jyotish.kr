@@ -58,13 +58,12 @@ export function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-slate-100 bg-[#07070b] overflow-x-hidden selection:bg-cyan-500/20 selection:text-cyan-300">
-      {/* Three.js 3D Interactive Canvas */}
+    <div className="relative min-h-screen text-neutral-100 bg-[#090a0f] overflow-x-hidden selection:bg-white/20 selection:text-white">
+      {/* Subtle Three.js Ambient Canvas */}
       <ThreeCanvas />
 
-      {/* Cyber Grid Background Overlays */}
-      <div className="fixed inset-0 cyber-grid opacity-30 pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-radial from-transparent via-[#07070b]/60 to-[#07070b] pointer-events-none z-0" />
+      {/* Subtle Grid Background */}
+      <div className="fixed inset-0 subtle-grid opacity-40 pointer-events-none z-0" />
 
       {/* Main Content Wrap */}
       <div id="main-content" className="relative z-10 flex flex-col">

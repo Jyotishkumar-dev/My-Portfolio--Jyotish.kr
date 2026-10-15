@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Award, BookOpen, Terminal, Code2 } from 'lucide-react';
+import { GraduationCap, Award, BookOpen } from 'lucide-react';
 import { LeetCodeIcon } from './Icons';
 
 export const AchievementsEducation: React.FC = () => {
