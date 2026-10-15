@@ -12,6 +12,7 @@ import { ContactSupabase } from './components/ContactSupabase';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { DevTerminal } from './components/DevTerminal';
+import { StudioCursor } from './components/StudioCursor';
 
 export function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -58,12 +59,15 @@ export function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-neutral-100 bg-[#090a0f] overflow-x-hidden selection:bg-white/20 selection:text-white">
+    <div className="relative min-h-screen text-neutral-100 bg-[#080b0f] overflow-x-hidden selection:bg-[#03e29c]/25 selection:text-[#03e29c]">
+      {/* Studio Interactive Desktop Cursor */}
+      <StudioCursor />
+
       {/* Subtle Three.js Ambient Canvas */}
       <ThreeCanvas />
 
       {/* Subtle Grid Background */}
-      <div className="fixed inset-0 subtle-grid opacity-40 pointer-events-none z-0" />
+      <div className="fixed inset-0 subtle-grid opacity-30 pointer-events-none z-0" />
 
       {/* Main Content Wrap */}
       <div id="main-content" className="relative z-10 flex flex-col">

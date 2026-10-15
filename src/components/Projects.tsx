@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Layers, CheckCircle2, ChevronRight, X, Cpu, Database } from 'lucide-react';
+import { ExternalLink, CheckCircle2, ChevronRight, X, Cpu, Database } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 interface Project {
