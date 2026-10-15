@@ -30,7 +30,7 @@ export const AchievementsEducation: React.FC = () => {
     {
       institution: 'SAGE University, Indore – Alta School of Technology',
       degree: 'B.Tech in Computer Science & Technology',
-      period: 'Aug 2025 – Present',
+      period: '2025 – 2029',
       score: 'CGPA: 7.8',
       location: 'Indore, Madhya Pradesh',
       focus: 'Data Structures & Algorithms, Object-Oriented Programming, DBMS, Web Development.',
@@ -74,7 +74,7 @@ export const AchievementsEducation: React.FC = () => {
             <span>[ 05 / ACADEMICS & PROBLEM SOLVING ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
-            Education & <span className="font-editorial text-[#03e29c] font-normal">Problem Solving</span>
+            Education & <span className="font-editorial text-white font-normal">Problem Solving</span>
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
             Formal computer science education, data structures and algorithms practice on LeetCode, and accredited engineering certifications.
@@ -82,12 +82,13 @@ export const AchievementsEducation: React.FC = () => {
         </div>
 
         {/* LeetCode Milestone Card (Clean Studio Card) */}
-        <div className="studio-card rounded-2xl p-6 sm:p-8">
+        <div className="bento-card rounded-2xl p-6 sm:p-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-xs font-mono text-[#03e29c]">
-                <LeetCodeIcon className="w-3.5 h-3.5 text-[#03e29c]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-neutral-300">
+                <LeetCodeIcon className="w-3.5 h-3.5 text-amber-400" />
                 <span>LeetCode Algorithmic Practice</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
@@ -113,9 +114,9 @@ export const AchievementsEducation: React.FC = () => {
 
             {/* Quick Stat box */}
             <div className="flex md:flex-col items-center justify-center p-6 rounded-2xl bg-black/40 border border-white/10 min-w-[180px] text-center">
-              <span className="text-4xl sm:text-5xl font-bold font-heading text-white text-gradient-emerald">55+</span>
+              <span className="text-4xl sm:text-5xl font-bold font-heading text-white">55+</span>
               <span className="text-xs text-neutral-300 font-mono mt-1 font-semibold">Problems Solved</span>
-              <span className="text-[10px] text-[#03e29c] font-mono mt-1 flex items-center gap-1">
+              <span className="text-[10px] text-neutral-400 font-mono mt-1 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" /> Java & C++ Focus
               </span>
             </div>

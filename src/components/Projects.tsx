@@ -137,7 +137,7 @@ export const Projects: React.FC = () => {
               <span>[ 02 / SELECTED WORKS ]</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
-              Featured <span className="font-editorial text-[#03e29c] font-normal">Projects</span>
+              Featured <span className="font-editorial text-white font-normal">Projects</span>
             </h2>
             <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
               Production web applications, multimodal AI workflows, and campus platforms engineered with scalable TypeScript architecture.

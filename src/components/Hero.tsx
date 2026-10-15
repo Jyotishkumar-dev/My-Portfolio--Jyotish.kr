@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowDown, Download, Mail, Check, MapPin, Code2, Terminal, Award, BookOpen, Binary } from 'lucide-react';
+import { ArrowDown, Download, Mail, Check, MapPin, Code2, Terminal, Award, BookOpen } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, LeetCodeIcon } from './Icons';
 
 interface HeroProps {

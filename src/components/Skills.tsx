@@ -85,7 +85,7 @@ export const Skills: React.FC = () => {
             <span>[ 03 / CAPABILITIES ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
-            Technical <span className="font-editorial text-[#03e29c] font-normal">Proficiencies</span>
+            Technical <span className="font-editorial text-white font-normal">Proficiencies</span>
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
             Core programming languages, client-side frameworks, cloud architectures, and databases applied in production systems.

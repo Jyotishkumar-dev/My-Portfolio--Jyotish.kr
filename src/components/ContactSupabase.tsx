@@ -113,7 +113,7 @@ export const ContactSupabase: React.FC = () => {
               <span>[ 06 / INQUIRY & CONTACT ]</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
-              Initiate a <span className="font-editorial text-[#03e29c] font-normal">Conversation</span>
+              Initiate a <span className="font-editorial text-white font-normal">Conversation</span>
             </h2>
             <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
               Open to 2026 software engineering internships, technical collaborations, or discussing architecture.

@@ -96,7 +96,7 @@ export const HackathonsLeadership: React.FC = () => {
             <span>[ 04 / INITIATIVES & LEADERSHIP ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
-            Leadership & <span className="font-editorial text-[#03e29c] font-normal">Initiatives</span>
+            Leadership & <span className="font-editorial text-white font-normal">Initiatives</span>
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm max-w-lg">
             Engineering leadership in 24-hour hackathons, brand identity for flagship collegiate fests, and campus community coordination.
