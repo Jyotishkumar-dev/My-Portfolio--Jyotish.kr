@@ -24,20 +24,31 @@ export const ThreeCanvas: React.FC = () => {
     renderer.setClearColor(0x090a0f, 0);
     container.appendChild(renderer.domElement);
 
-    // Subtle, elegant particle field (tasteful, non-distracting)
-    const particleCount = 280;
+    // MK Vision inspired subtle emerald & starlight particles
+    const particleCount = 260;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
-    const alphas = new Float32Array(particleCount);
+    const colors = new Float32Array(particleCount * 3);
+
+    const emerald = new THREE.Color('#03e29c');
+    const softSlate = new THREE.Color('#94a3b8');
+    const pureWhite = new THREE.Color('#ffffff');
 
     for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 140;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 140;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
-      alphas[i] = Math.random() * 0.4 + 0.1;
+      positions[i * 3] = (Math.random() - 0.5) * 130;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 130;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 90;
+
+      // Mix colors: 35% emerald accent, 45% soft slate, 20% white
+      const rand = Math.random();
+      const c = rand < 0.35 ? emerald : rand < 0.8 ? softSlate : pureWhite;
+      colors[i * 3] = c.r;
+      colors[i * 3 + 1] = c.g;
+      colors[i * 3 + 2] = c.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     // Simple round dot texture
     const canvas = document.createElement('canvas');
@@ -47,16 +58,17 @@ export const ThreeCanvas: React.FC = () => {
     if (ctx) {
       ctx.beginPath();
       ctx.arc(8, 8, 6, 0, Math.PI * 2);
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = '#ffffff';
       ctx.fill();
     }
     const texture = new THREE.CanvasTexture(canvas);
 
     const material = new THREE.PointsMaterial({
-      size: 1.2,
+      size: 1.1,
       map: texture,
+      vertexColors: true,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.35,
       depthWrite: false,
     });
 
