@@ -79,9 +79,9 @@ export const Skills: React.FC = () => {
     <section id="skills" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10 text-left">
         {/* Header */}
-        <div className="space-y-2 border-b border-white/10 pb-6">
+        <div className="space-y-2 border-b border-white/10 pb-6 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
             <span>[ 03 / CAPABILITIES ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
@@ -99,12 +99,12 @@ export const Skills: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="studio-card rounded-2xl p-6 flex flex-col justify-between"
+                className="studio-card rounded-2xl p-6 flex flex-col justify-between reveal-on-scroll"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
                     <div className="flex items-center gap-2.5">
-                      <div className="p-1.5 rounded-lg bg-white/5 text-[#03e29c]">{cat.icon}</div>
+                      <div className="p-1.5 rounded-lg bg-[#FF5500]/10 text-[#FF5500] border border-[#FF5500]/20">{cat.icon}</div>
                       <h3 className="text-sm font-bold font-heading text-white">
                         {cat.title}
                       </h3>
@@ -125,14 +125,14 @@ export const Skills: React.FC = () => {
                           }
                           className={`p-2.5 rounded-xl cursor-pointer transition-all duration-200 border ${
                             isSelected
-                              ? 'bg-white/[0.08] border-[#03e29c]/40 shadow-sm'
+                              ? 'bg-white/[0.08] border-[#FF5500]/40 shadow-sm'
                               : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.05] hover:border-white/15'
                           }`}
                         >
                           <div className="flex items-center justify-between text-xs">
                             <span className="font-medium text-neutral-200 flex items-center gap-1.5">
                               {skill.level === 'Advanced' && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
                               )}
                               {skill.name}
                             </span>
@@ -153,7 +153,7 @@ export const Skills: React.FC = () => {
 
                 <p className="text-[10px] text-neutral-500 font-mono mt-4 pt-2.5 border-t border-white/5 flex items-center justify-between">
                   <span>Click to view implementation focus</span>
-                  <span className="text-[#03e29c]">● Advanced</span>
+                  <span className="text-[#FF5500] font-medium">● Advanced</span>
                 </p>
               </div>
             );

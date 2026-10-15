@@ -15,14 +15,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       onClick={onClose}
     >
       <div
-        className="w-full max-w-4xl h-[88vh] my-auto flex flex-col rounded-2xl bg-[#0f1118] border border-white/15 shadow-2xl overflow-hidden"
+        className="w-full max-w-4xl h-[88vh] my-auto flex flex-col rounded-2xl bg-[#141414] border border-[#FF5500]/25 shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-[#141721]">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-[#1c1a1a]">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-300">
-              <FileText className="w-4 h-4" />
+              <FileText className="w-4 h-4 text-[#FF5500]" />
             </div>
             <div>
               <h3 className="text-white font-medium text-xs sm:text-sm">
@@ -36,7 +36,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <a
               href="/assets/Jyotish_Kumar_Resume.pdf"
               download="Jyotish_Kumar_Resume.pdf"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-white text-neutral-950 hover:bg-neutral-200 transition"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#FF5500] hover:bg-[#FF4D00] text-white shadow-md shadow-[#FF5500]/30 transition"
             >
               <Download className="w-3.5 h-3.5" />
               Download PDF

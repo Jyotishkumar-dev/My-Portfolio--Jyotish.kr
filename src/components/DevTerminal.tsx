@@ -99,7 +99,7 @@ export const DevTerminal: React.FC<DevTerminalProps> = ({ isOpen, onClose }) => 
         res = (
           <div className="space-y-1 text-neutral-300">
             <p className="text-white font-medium">LeetCode Problem Solving:</p>
-            <p>Solved <span className="text-emerald-400 font-semibold">55+</span> problems focusing on foundational DSA in Java & C++.</p>
+            <p>Solved <span className="text-orange-400 font-semibold">55+</span> problems focusing on foundational DSA in Java & C++.</p>
             <p>Key topics: Arrays, Two Pointers, Sliding Window, Linked Lists, Binary Search, Trees.</p>
           </div>
         );

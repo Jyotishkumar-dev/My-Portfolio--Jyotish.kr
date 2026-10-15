@@ -271,13 +271,13 @@ export const Projects: React.FC = () => {
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="w-full max-w-xl my-auto max-h-[85vh] flex flex-col rounded-2xl bg-[#0d1118] border border-white/15 shadow-2xl overflow-hidden text-left"
+            className="w-full max-w-xl my-auto max-h-[85vh] flex flex-col rounded-2xl bg-[#141414] border border-[#FF5500]/25 shadow-2xl overflow-hidden text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#121722]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#1c1a1a]">
               <div className="flex items-center gap-2.5">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#03e29c]/15 text-[#03e29c] border border-[#03e29c]/30">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#FF5500]/15 text-[#FF5500] border border-[#FF5500]/30 font-semibold">
                   {selectedProject.badge}
                 </span>
                 <h3 className="text-base font-bold text-white font-heading">
@@ -301,12 +301,12 @@ export const Projects: React.FC = () => {
 
               <div>
                 <h4 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-2.5 flex items-center gap-1.5">
-                  <Database className="w-3.5 h-3.5 text-[#03e29c]" /> Key Implementation Details
+                  <Database className="w-3.5 h-3.5 text-[#FF5500]" /> Key Implementation Details
                 </h4>
                 <ul className="space-y-2.5">
                   {selectedProject.architectureDetails.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-xs text-neutral-300">
-                      <CheckCircle2 className="w-4 h-4 text-[#03e29c] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -329,12 +329,12 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-4 border-t border-white/10 bg-[#121722] flex items-center justify-between">
+            <div className="px-6 py-4 border-t border-white/10 bg-[#1c1a1a] flex items-center justify-between">
               <a
                 href={selectedProject.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-white"
+                className="flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-white hover:underline"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>View GitHub Repository</span>
@@ -344,9 +344,9 @@ export const Projects: React.FC = () => {
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white text-neutral-950 text-xs font-medium hover:bg-neutral-200 transition"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#FF5500] hover:bg-[#FF4D00] text-white text-xs font-semibold shadow-md shadow-[#FF5500]/30 transition"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-neutral-950" />
+                  <ExternalLink className="w-3.5 h-3.5 text-white" />
                   <span>Live Production Demo</span>
                 </a>
               )}

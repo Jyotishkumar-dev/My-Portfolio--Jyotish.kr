@@ -68,9 +68,9 @@ export const AchievementsEducation: React.FC = () => {
     <section id="education" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-12 text-left">
         {/* Section Header */}
-        <div className="space-y-2 border-b border-white/10 pb-6">
+        <div className="space-y-2 border-b border-white/10 pb-6 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
             <span>[ 05 / ACADEMICS & PROBLEM SOLVING ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
@@ -82,13 +82,13 @@ export const AchievementsEducation: React.FC = () => {
         </div>
 
         {/* LeetCode Milestone Card (Clean Studio Card) */}
-        <div className="bento-card rounded-2xl p-6 sm:p-8">
+        <div className="bento-card rounded-2xl p-6 sm:p-8 reveal-on-scroll">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-neutral-300">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-[#FF5500]/25 text-xs font-mono text-neutral-300">
                 <LeetCodeIcon className="w-3.5 h-3.5 text-amber-400" />
                 <span>LeetCode Algorithmic Practice</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
@@ -104,7 +104,7 @@ export const AchievementsEducation: React.FC = () => {
                 {leetCodeTopics.map((topic) => (
                   <span
                     key={topic}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10"
+                    className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10 hover:border-[#FF5500]/30 transition-colors"
                   >
                     {topic}
                   </span>
@@ -117,7 +117,7 @@ export const AchievementsEducation: React.FC = () => {
               <span className="text-4xl sm:text-5xl font-bold font-heading text-white">55+</span>
               <span className="text-xs text-neutral-300 font-mono mt-1 font-semibold">Problems Solved</span>
               <span className="text-[10px] text-neutral-400 font-mono mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" /> Java & C++ Focus
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" /> Java & C++ Focus
               </span>
             </div>
           </div>
@@ -127,7 +127,7 @@ export const AchievementsEducation: React.FC = () => {
         <div className="space-y-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-[#03e29c]" />
+              <BookOpen className="w-4 h-4 text-[#FF5500]" />
               <h3 className="text-xl font-bold font-heading text-white">Academic Qualifications</h3>
             </div>
             <span className="text-xs font-mono text-neutral-400">Verified Records</span>
@@ -139,12 +139,12 @@ export const AchievementsEducation: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300"
+                  className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 reveal-on-scroll"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-xs font-mono border-b border-white/5 pb-2.5">
                       <span className="text-neutral-500 font-semibold text-[11px]">[{eduNumber}]</span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-[#03e29c] text-xs font-semibold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#FF5500]/10 border border-[#FF5500]/25 text-[#FF5500] text-xs font-semibold">
                         {edu.score}
                       </span>
                     </div>
@@ -174,7 +174,7 @@ export const AchievementsEducation: React.FC = () => {
         <div className="space-y-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#03e29c]" />
+              <Award className="w-4 h-4 text-[#FF5500]" />
               <h3 className="text-xl font-bold font-heading text-white">Accredited Certifications</h3>
             </div>
             <span className="text-xs font-mono text-neutral-400">Professional Credentials</span>
@@ -184,10 +184,10 @@ export const AchievementsEducation: React.FC = () => {
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
-                className="studio-card rounded-xl p-5 flex flex-col justify-between text-left"
+                className="studio-card rounded-xl p-5 flex flex-col justify-between text-left reveal-on-scroll"
               >
                 <div className="space-y-2">
-                  <span className="text-[10px] font-mono text-[#03e29c] block uppercase tracking-wider">
+                  <span className="text-[10px] font-mono text-[#FF5500] block uppercase tracking-wider font-semibold">
                     {cert.tag}
                   </span>
                   <h4 className="text-xs sm:text-sm font-semibold text-white leading-snug">

@@ -90,9 +90,9 @@ export const HackathonsLeadership: React.FC = () => {
     <section id="leadership" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* Header */}
-        <div className="text-left space-y-2 border-b border-white/10 pb-6">
+        <div className="text-left space-y-2 border-b border-white/10 pb-6 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
             <span>[ 04 / INITIATIVES & LEADERSHIP ]</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
@@ -110,7 +110,7 @@ export const HackathonsLeadership: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300"
+                className="studio-card rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 reveal-on-scroll"
               >
                 <div className="space-y-4">
                   {/* Top strip */}
@@ -119,7 +119,7 @@ export const HackathonsLeadership: React.FC = () => {
                       <span className="text-neutral-500 font-semibold text-[11px]">
                         [{expNumber}]
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#03e29c]/10 border border-[#03e29c]/20 text-[#03e29c] text-[10px]">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#FF5500]/10 border border-[#FF5500]/25 text-[#FF5500] text-[10px] font-semibold">
                         {exp.type}
                       </span>
                     </div>
@@ -134,7 +134,7 @@ export const HackathonsLeadership: React.FC = () => {
                     <h3 className="text-lg font-bold font-heading text-white">
                       {exp.title}
                     </h3>
-                    <p className="text-xs font-medium text-[#03e29c] mt-0.5">
+                    <p className="text-xs font-medium text-[#FF5500] mt-0.5">
                       {exp.role}
                     </p>
                     <p className="text-[11px] text-neutral-400 font-mono mt-0.5">
@@ -146,7 +146,7 @@ export const HackathonsLeadership: React.FC = () => {
                   <ul className="space-y-2.5 pt-2 border-t border-white/5">
                     {exp.highlights.map((h, hIdx) => (
                       <li key={hIdx} className="flex items-start gap-2 text-xs text-neutral-300 leading-relaxed">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#03e29c] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -158,7 +158,7 @@ export const HackathonsLeadership: React.FC = () => {
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10"
+                      className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/[0.04] text-neutral-300 border border-white/10 hover:border-[#FF5500]/30 transition-colors"
                     >
                       {tag}
                     </span>

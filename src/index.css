@@ -7,17 +7,19 @@
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     --font-serif: 'Playfair Display', Georgia, serif;
     
-    /* Vibrant Creative Director Orange & Warm Red Theme */
-    --accent-orange: #FF5500;
-    --accent-orange-fiery: #FF4D00;
-    --accent-magenta: #E11D48;
-    --bg-base: #0D0D0D;
+    /* Neon Cyberpunk & Glassmorphic Color Tokens */
+    --neon-pink: #FF2E93;
+    --electric-cyan: #00F0FF;
+    --neon-purple: #9333EA;
+    --dark-base: #0B0813;
+    --dark-canvas: #0F0C1B;
+    --text-lavender: #A3A3C2;
   }
 
   body {
     font-family: var(--font-body);
-    background-color: #0D0D0D;
-    color: #cbd5e1;
+    background-color: #0B0813;
+    color: #A3A3C2;
     overflow-x: hidden;
     letter-spacing: -0.015em;
   }
@@ -32,7 +34,7 @@
   }
 }
 
-/* Editorial Serif Italic Accent (Creative Director emphasis) */
+/* Editorial Serif Italic Accent */
 .font-editorial {
   font-family: var(--font-serif);
   font-style: italic;
@@ -40,38 +42,38 @@
   letter-spacing: -0.01em;
 }
 
-/* Glassmorphism Bento Card Grid */
+/* Cyberpunk Glassmorphic Bento Cards */
 .bento-card {
-  background: rgba(20, 20, 20, 0.62);
+  background: rgba(15, 12, 28, 0.55);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 77, 0, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
-  border-color: rgba(255, 85, 0, 0.45);
-  background: rgba(26, 22, 22, 0.82);
+  border-color: rgba(255, 46, 147, 0.45);
+  background: rgba(22, 17, 40, 0.75);
   transform: translateY(-4px) scale(1.005);
-  box-shadow: 0 20px 40px -12px rgba(255, 77, 0, 0.22), 0 0 25px -4px rgba(255, 77, 0, 0.14), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 45px -12px rgba(255, 46, 147, 0.22), 0 0 25px -4px rgba(0, 240, 255, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
 }
 
-/* Glassmorphic Studio Section Cards */
+/* Dark Glassmorphic Studio Section Cards */
 .studio-card {
-  background: rgba(20, 20, 20, 0.65);
+  background: rgba(15, 12, 28, 0.58);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 77, 0, 0.14);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .studio-card:hover {
-  border-color: rgba(255, 85, 0, 0.45);
-  background: rgba(26, 22, 22, 0.85);
+  border-color: rgba(0, 240, 255, 0.4);
+  background: rgba(22, 17, 40, 0.82);
   transform: translateY(-4px);
-  box-shadow: 0 20px 45px -12px rgba(255, 77, 0, 0.24), 0 0 30px -6px rgba(255, 77, 0, 0.16), inset 0 1px 0 0 rgba(255, 85, 0, 0.2);
+  box-shadow: 0 20px 45px -12px rgba(0, 240, 255, 0.2), 0 0 30px -6px rgba(255, 46, 147, 0.18), inset 0 1px 0 0 rgba(0, 240, 255, 0.2);
 }
 
 .studio-pill {
@@ -81,26 +83,26 @@
 }
 
 .studio-pill:hover {
-  background: rgba(255, 85, 0, 0.12);
-  border-color: rgba(255, 85, 0, 0.35);
+  background: rgba(255, 46, 147, 0.12);
+  border-color: rgba(255, 46, 147, 0.35);
   color: #ffffff;
 }
 
-/* Creative Director Orange Button */
-.btn-primary-orange {
-  background: linear-gradient(135deg, #FF5500 0%, #FF3D00 100%);
+/* Dynamic Action Button (Glowing Pink-to-Purple Gradient) */
+.btn-neon-pink-purple {
+  background: linear-gradient(135deg, #FF2E93 0%, #9333EA 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 20px -2px rgba(255, 77, 0, 0.45);
+  box-shadow: 0 4px 25px -2px rgba(255, 46, 147, 0.45);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-primary-orange:hover {
+.btn-neon-pink-purple:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 30px 0 rgba(255, 77, 0, 0.65), 0 0 20px rgba(255, 85, 0, 0.35);
+  box-shadow: 0 8px 35px 0 rgba(255, 46, 147, 0.65), 0 0 25px rgba(0, 240, 255, 0.35);
   filter: brightness(1.08);
 }
 
-.btn-primary-orange:active {
+.btn-neon-pink-purple:active {
   transform: translateY(0) scale(0.99);
 }
 
@@ -108,8 +110,8 @@
 .subtle-grid {
   background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(163, 163, 194, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(163, 163, 194, 0.035) 1px, transparent 1px);
 }
 
 /* Slow Ambient Mesh Gradient Animations */
@@ -143,12 +145,25 @@
   }
 }
 
+@keyframes sphereFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(6deg);
+  }
+}
+
 .animate-mesh-pulse {
   animation: meshPulseSlow 18s ease-in-out infinite;
 }
 
 .animate-mesh-drift {
   animation: meshDriftSlow 24s ease-in-out infinite;
+}
+
+.animate-sphere-float {
+  animation: sphereFloatSlow 8s ease-in-out infinite;
 }
 
 /* Smooth Floating Animation for Profile Card */
@@ -199,14 +214,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0D;
+  background: #0B0813;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #251B3A;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF5500;
+  background: #FF2E93;
 }

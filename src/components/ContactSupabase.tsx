@@ -106,10 +106,10 @@ export const ContactSupabase: React.FC = () => {
     <section id="contact" className="py-20 px-4">
       <div className="max-w-5xl mx-auto space-y-10 text-left">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-white/10 pb-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
               <span>[ 06 / INQUIRY & CONTACT ]</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading">
@@ -124,10 +124,10 @@ export const ContactSupabase: React.FC = () => {
           <div className="flex items-center gap-2 self-start md:self-auto">
             <button
               onClick={() => setIsConfigOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#03e29c]/30 text-xs font-mono text-neutral-300 transition"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#FF5500]/30 text-xs font-mono text-neutral-300 transition"
               title="Supabase Settings"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#03e29c]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] shadow-[0_0_8px_#FF5500]" />
               <span>Supabase {configStatus.isConfigured ? 'Live' : 'Buffer'}</span>
               <Settings className="w-3 h-3 text-neutral-500" />
             </button>
@@ -144,7 +144,7 @@ export const ContactSupabase: React.FC = () => {
         {/* Contact Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Direct Contact Info */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-4 reveal-on-scroll">
             <div className="studio-card rounded-2xl p-6 sm:p-7 space-y-5">
               <div>
                 <h3 className="text-base font-bold font-heading text-white">
@@ -165,7 +165,7 @@ export const ContactSupabase: React.FC = () => {
                     onClick={handleCopyEmail}
                     className="text-[11px] text-neutral-400 hover:text-white font-mono flex items-center gap-1 transition"
                   >
-                    {copiedEmail ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                    {copiedEmail ? <Check className="w-3 h-3 text-[#FF5500]" /> : <Copy className="w-3 h-3" />}
                     {copiedEmail ? 'Copied' : 'Copy'}
                   </button>
                 </div>
@@ -228,7 +228,7 @@ export const ContactSupabase: React.FC = () => {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 reveal-on-scroll">
             <div className="studio-card rounded-2xl p-6 sm:p-7">
               <h3 className="text-base font-bold font-heading text-white mb-1">
                 Transmit Inquiry
@@ -241,11 +241,11 @@ export const ContactSupabase: React.FC = () => {
                 <div
                   className={`mb-5 p-3.5 rounded-xl border flex items-start gap-2.5 text-xs ${
                     submittedResult.success
-                      ? 'bg-emerald-950/30 border-emerald-500/30 text-emerald-300'
+                      ? 'bg-orange-950/30 border-[#FF5500]/40 text-orange-200'
                       : 'bg-red-950/30 border-red-500/30 text-red-300'
                   }`}
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold">{submittedResult.success ? 'Message Sent' : 'Notice'}</p>
                     <p className="text-neutral-300 mt-0.5">{submittedResult.message}</p>
@@ -265,7 +265,7 @@ export const ContactSupabase: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Alex Rivera"
-                      className="w-full px-3 py-2 rounded-xl bg-[#090b10] border border-white/10 focus:border-white/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
+                      className="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
                     />
                   </div>
 
@@ -279,7 +279,7 @@ export const ContactSupabase: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="alex@company.com"
-                      className="w-full px-3 py-2 rounded-xl bg-[#090b10] border border-white/10 focus:border-white/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
+                      className="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
                     />
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export const ContactSupabase: React.FC = () => {
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="e.g. Google, University"
-                      className="w-full px-3 py-2 rounded-xl bg-[#090b10] border border-white/10 focus:border-white/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
+                      className="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition"
                     />
                   </div>
 
@@ -301,7 +301,7 @@ export const ContactSupabase: React.FC = () => {
                     <select
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3 py-2 rounded-xl bg-[#090b10] border border-white/10 focus:border-white/30 focus:outline-none text-white text-xs transition"
+                      className="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/30 focus:outline-none text-white text-xs transition"
                     >
                       <option value="Internship Opportunity">Software Engineering Internship</option>
                       <option value="Full-Time Role">Full-Stack Role</option>
@@ -321,16 +321,16 @@ export const ContactSupabase: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Hello Jyotish, I came across your portfolio and wanted to discuss..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 focus:border-[#03e29c]/50 focus:outline-none text-white text-xs placeholder-neutral-600 transition resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/30 focus:outline-none text-white text-xs placeholder-neutral-600 transition resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-magnetic w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-neutral-950 font-semibold text-xs hover:bg-neutral-100 transition disabled:opacity-50 shadow-md"
+                  className="btn-primary-orange w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs disabled:opacity-50"
                 >
-                  <Send className="w-3.5 h-3.5 text-neutral-800" />
+                  <Send className="w-3.5 h-3.5 text-white" />
                   <span>{isSubmitting ? 'Transmitting to Supabase...' : 'Send Inquiry Message'}</span>
                 </button>
               </form>
