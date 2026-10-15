@@ -24,14 +24,14 @@ export const ThreeCanvas: React.FC = () => {
     renderer.setClearColor(0x090a0f, 0);
     container.appendChild(renderer.domElement);
 
-    // Cyberpunk ambient floating starlight: Neon Pink, Electric Cyan & Pure White
+    // Dark-indigo ambient floating starlight: Electric Purple, Royal Blue & Pure White
     const particleCount = 260;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const neonPink = new THREE.Color('#FF2E93');
-    const electricCyan = new THREE.Color('#00F0FF');
+    const electricPurple = new THREE.Color('#8B5CF6');
+    const royalBlue = new THREE.Color('#3B82F6');
     const pureWhite = new THREE.Color('#FFFFFF');
 
     for (let i = 0; i < particleCount; i++) {
@@ -39,9 +39,9 @@ export const ThreeCanvas: React.FC = () => {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 130;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 90;
 
-      // Mix colors: 40% neon pink accent, 35% electric cyan, 25% pure white
+      // Mix colors: 40% electric purple, 35% royal blue, 25% pure white
       const rand = Math.random();
-      const c = rand < 0.4 ? neonPink : rand < 0.75 ? electricCyan : pureWhite;
+      const c = rand < 0.4 ? electricPurple : rand < 0.75 ? royalBlue : pureWhite;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;
