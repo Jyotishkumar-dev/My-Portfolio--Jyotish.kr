@@ -64,7 +64,7 @@ export function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-neutral-100 bg-[#0D0D0D] overflow-x-hidden selection:bg-[#FF5500]/30 selection:text-[#FF7722]">
+    <div className="relative min-h-screen text-[#A3A3C2] bg-[#0B0813] overflow-x-hidden selection:bg-[#FF2E93]/35 selection:text-[#00F0FF]">
       {/* Studio Interactive Desktop Cursor */}
       <StudioCursor />
 

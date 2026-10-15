@@ -43,18 +43,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
         <a
           href="#about"
           onClick={(e) => handleLinkClick(e, '#about')}
-          className="group flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#141414]/85 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/40 transition-all duration-300 shadow-sm"
+          className="group flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#0F0C1B]/75 backdrop-blur-[24px] border border-white/[0.08] hover:border-[#FF2E93]/40 transition-all duration-300 shadow-sm"
         >
-          <div className="w-6 h-6 rounded-lg bg-neutral-900 border border-white/10 group-hover:border-[#FF5500]/50 flex items-center justify-center font-mono font-bold text-xs text-white transition-colors">
+          <div className="w-6 h-6 rounded-lg bg-neutral-900/90 border border-white/10 group-hover:border-[#FF2E93]/50 flex items-center justify-center font-mono font-bold text-xs text-white transition-colors">
             JK
           </div>
           <div className="flex flex-col text-left">
-            <span className="font-heading font-semibold text-xs text-neutral-100 group-hover:text-white flex items-center gap-1.5">
+            <span className="font-heading font-semibold text-xs text-white flex items-center gap-1.5">
               Jyotish Kumar
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF2E93] animate-pulse shadow-[0_0_8px_#FF2E93]" />
             </span>
-            <span className="text-[10px] text-neutral-400 font-mono -mt-0.5 flex items-center gap-1">
-              <MapPin className="w-2.5 h-2.5 text-neutral-400" /> Indore, M.P.
+            <span className="text-[10px] text-[#A3A3C2] font-mono -mt-0.5 flex items-center gap-1">
+              <MapPin className="w-2.5 h-2.5 text-[#00F0FF]" /> Indore, M.P.
             </span>
           </div>
         </a>
@@ -63,8 +63,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
         <nav
           className={`hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full border transition-all duration-300 ${
             isScrolled
-              ? 'bg-[#0d1118]/90 backdrop-blur-md border-white/15 shadow-xl shadow-black/50'
-              : 'bg-[#0d1118]/60 backdrop-blur-md border-white/10'
+              ? 'bg-[#0F0C1B]/85 backdrop-blur-[24px] border-[#00F0FF]/25 shadow-xl shadow-black/60'
+              : 'bg-[#0F0C1B]/55 backdrop-blur-[24px] border-white/[0.08]'
           }`}
         >
           {navLinks.map((link) => (
@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="px-3.5 py-1 text-xs text-neutral-300 hover:text-white rounded-full hover:bg-white/5 transition-all duration-200"
+              className="px-3.5 py-1 text-xs text-[#A3A3C2] hover:text-white rounded-full hover:bg-white/5 transition-all duration-200"
             >
               {link.name}
             </a>
@@ -84,27 +84,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
           {/* Subtle Dev CLI button */}
           <button
             onClick={onOpenTerminal}
-            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#141414]/85 backdrop-blur-md border border-white/10 hover:border-[#FF5500]/30 text-neutral-400 hover:text-neutral-200 text-xs font-mono transition"
+            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0F0C1B]/75 backdrop-blur-[24px] border border-white/[0.08] hover:border-[#00F0FF]/40 text-[#A3A3C2] hover:text-white text-xs font-mono transition"
             title="Open Developer Terminal (~)"
           >
-            <Terminal className="w-3.5 h-3.5 text-[#FF5500]" />
+            <Terminal className="w-3.5 h-3.5 text-[#00F0FF]" />
             <span className="text-[11px]">CLI</span>
           </button>
 
-          {/* Clean Resume Link with Studio Feel */}
+          {/* Clean Glowing Action Resume Button */}
           <button
             onClick={onOpenResume}
-            className="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white hover:bg-neutral-100 text-neutral-950 font-medium text-xs transition shadow-sm"
+            className="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#FF2E93] to-[#9333EA] text-white font-semibold text-xs shadow-md shadow-[#FF2E93]/35 hover:shadow-[#FF2E93]/65 hover:scale-105 transition-all"
           >
-            <FileText className="w-3.5 h-3.5 text-neutral-700 group-hover:text-neutral-950 transition-colors" />
+            <FileText className="w-3.5 h-3.5 text-white" />
             <span>Resume</span>
-            <span className="text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[10px]">↗</span>
+            <span className="text-white/80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[10px]">↗</span>
           </button>
 
           {/* Mobile Menu */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-[#141414]/85 backdrop-blur-md border border-white/10 text-neutral-300 hover:text-white"
+            className="md:hidden p-2 rounded-lg bg-[#0F0C1B]/75 backdrop-blur-[24px] border border-white/[0.08] text-[#A3A3C2] hover:text-white"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -113,14 +113,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#141414]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-2xl pointer-events-auto">
+        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#0F0C1B]/95 backdrop-blur-[24px] border border-white/[0.08] rounded-2xl p-4 shadow-2xl pointer-events-auto">
           <div className="flex flex-col gap-1 text-left">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="px-3 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition"
+                className="px-3 py-2 text-sm text-[#A3A3C2] hover:text-white hover:bg-white/5 rounded-lg transition"
               >
                 {link.name}
               </a>
@@ -131,11 +131,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenResume }) 
                   setMobileMenuOpen(false);
                   onOpenTerminal();
                 }}
-                className="flex items-center gap-1.5 text-xs font-mono text-neutral-400 py-1"
+                className="flex items-center gap-1.5 text-xs font-mono text-[#A3A3C2] hover:text-white py-1"
               >
-                <Terminal className="w-3.5 h-3.5 text-[#FF5500]" /> Dev Terminal
+                <Terminal className="w-3.5 h-3.5 text-[#00F0FF]" /> Dev Terminal
               </button>
-              <span className="text-xs text-neutral-400 font-mono">Indore, M.P.</span>
+              <span className="text-xs text-[#A3A3C2] font-mono">Indore, M.P.</span>
             </div>
           </div>
         </div>
